@@ -1,6 +1,32 @@
 ## Foreword
 First of all, thanks for taking the time to take this tech challenge. We really appreciate it. And now, are you ready to rumble? :)
 
+## Installation
+Hi guys, this solution uses PostgreSQL and assumes it running on localhost and the default port (5432). Jobs are scheduled using the Rufus Scheduler gem and therefore the schedules will run automatically when starting the server.
+
+### Environment
+To prepare de database, run the following commands:
+
+Bundle:
+
+```bash
+bundle install
+```
+
+Database:
+```bash
+rails db:migrate && db:seed
+```
+
+### Starting
+Finally, to run the server that provides the endpoints and the robot jobs running on a schedule, run the following command:
+
+```bash
+rails server
+```
+
+And the robots will start to hack away happily
+
 ## Robot World
 
 It's the year 2020, the developers are part of the past. You are probably the last dev on the earth and you are pretty busy, so you decide the best is the robots can handle all the work instead of you.
