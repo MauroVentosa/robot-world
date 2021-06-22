@@ -11,5 +11,8 @@ scheduler.every "1d", RobotBuilder.new(RobotBuilder::END_OF_DAY)
 # Robot Guard Schedule
 #scheduler.every "1m", RobotGuard.new
 
+# Robot Buyer
+scheduler.every "1m", RobotBuyer.new
+
 # Random amount of order changes per hour
 scheduler.every "1h", RobotChanger.new
