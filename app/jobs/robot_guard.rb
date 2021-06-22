@@ -1,6 +1,5 @@
 class RobotGuard
-  #$SLACK_NOTIFICATIONS_ENDPOINT = "https://hooks.slack.com/services/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"
-  $SLACK_NOTIFICATIONS_ENDPOINT = "https://60d0cc617de0b20017109936.mockapi.io/messages"
+  $SLACK_NOTIFICATIONS_ENDPOINT = "https://hooks.slack.com/services/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"
 
   def call(job, time)
     quality_control_batch
