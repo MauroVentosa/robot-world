@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_011604) do
+ActiveRecord::Schema.define(version: 2021_06_21_155745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,10 +61,10 @@ ActiveRecord::Schema.define(version: 2021_06_17_011604) do
 
   create_table "orders", force: :cascade do |t|
     t.string "client"
-    t.bigint "car_id", null: false
+    t.bigint "store_car_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["car_id"], name: "index_orders_on_car_id"
+    t.index ["store_car_id"], name: "index_orders_on_store_car_id"
   end
 
   create_table "parts", force: :cascade do |t|
@@ -75,9 +75,21 @@ ActiveRecord::Schema.define(version: 2021_06_17_011604) do
     t.index ["location_id"], name: "index_parts_on_location_id"
   end
 
+  create_table "store_cars", force: :cascade do |t|
+    t.integer "price"
+    t.integer "costPrice"
+    t.integer "year"
+    t.boolean "ordered", default: false
+    t.bigint "car_model_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["car_model_id"], name: "index_store_cars_on_car_model_id"
+  end
+
   add_foreign_key "cars", "car_models"
   add_foreign_key "cars", "locations"
   add_foreign_key "locations", "factories"
-  add_foreign_key "orders", "cars"
+  add_foreign_key "orders", "store_cars"
   add_foreign_key "parts", "locations"
+  add_foreign_key "store_cars", "car_models"
 end

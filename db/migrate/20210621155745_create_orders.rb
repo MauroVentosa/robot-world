@@ -2,7 +2,7 @@ class CreateOrders < ActiveRecord::Migration[6.1]
   def change
     create_table :orders do |t|
       t.string :client
-      t.references :car, null: false, foreign_key: true
+      t.references :store_car, null: false, foreign_key: true
 
       t.timestamps
     end

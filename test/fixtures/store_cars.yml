@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1
+  costPrice: 1
+  year: 1
+  carModel: one
+
+two:
+  price: 1
+  costPrice: 1
+  year: 1
+  carModel: two
